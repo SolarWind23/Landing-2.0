@@ -1,0 +1,158 @@
+@mixin font-style ($font, $size, $color:black, $transform:none) {
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+    text-transform: $transform;
+};
+
+@mixin hexagon ($width,  $height, $bg-color, $margin:20px) {
+    .hexagon-wrapper {
+        width: $width;
+        height: $height;
+        text-align: center;
+        margin: $margin;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .hexagon {
+        background-color: $bg-color;
+        height: 100%;
+        width: calc(100% * 0.57735);
+        display: inline-block;
+    }
+    
+    .hexagon:before {
+        position: absolute;
+        top: 0;
+        right: calc((50%) - ((100% * 0.57735) / 2));
+        background-color: inherit;
+        height: inherit;
+        width: inherit;
+        content: '';
+        transform: rotateZ(60deg);
+    }
+    
+    .hexagon:after {
+        position: absolute;
+        top: 0;
+        right: calc((50%) - ((100% * 0.57735) / 2));
+        background-color: inherit;
+        height: inherit;
+        width: inherit;
+        content: '';
+        transform: rotateZ(-60deg);
+    }
+}
+
+@mixin scroll-bar ($width,  $height, $bg-color, $position, $marging:0px, $y:0%, $sideWidth:17.7%) {
+    .scrollbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: $position;
+        bottom:  $y;
+        margin-top: $marging;
+        left:50%;
+        width: 100%;
+        transform: translateX(-50%);
+        z-index: 890;
+
+        @include hexagon($width,$height, $bg-color);
+        // .hexagon-wrapper {
+        //     width: $width;
+        //     height: $height;
+        //     text-align: center;
+        //     position: relative;
+        //     display: inline-block;
+        // };
+    
+        // .hexagon {
+        //     height: 100%;
+        //     width: calc(100% * 0.57735);
+        //     display: inline-block;
+        //     background-color:$bg-color;
+        // };
+        
+        // .hexagon:before {
+        //     position: absolute;
+        //     top: 0;
+        //     right: calc((100% / 2) - ((100% * 0.57735) / 2));
+        //     background-color: inherit;
+        //     height: inherit;
+        //     width: inherit;
+        //     content: '';
+        //     transform: rotateZ(60deg);
+        // };
+        
+        // .hexagon:after {
+        //     position: absolute;
+        //     top: 0;
+        //     right: calc((100% / 2) - ((100% * 0.57735) / 2));
+        //     background-color: inherit;
+        //     height: inherit;
+        //     width: inherit;
+        //     content: '';
+        //     transform: rotateZ(-60deg);
+        // };
+    
+        &-side{
+            border:1px solid $bg-color;
+            width:$sideWidth;
+        };
+    };
+};
+
+@mixin introduce ($marginContainer:0px, $marginTitle:0px, $colorTitle:$w, $colorText:$w) {
+    .introduce {
+        text-align: center;
+        margin-bottom:$marginContainer;
+
+        &-title {
+            @include font-style($raleway-bo, 30px, $colorTitle);
+            margin-bottom: $marginTitle;
+        };
+
+        .colored {
+            color:$r;
+        };
+
+        &-text {
+            @include font-style($lato-bo, 16px, $colorText);  
+        };  
+    };
+};
+@mixin media-introduce () {
+    @media (max-width: 575.98px) { 
+        .introduce {
+          margin-bottom: 50px;
+            &-title {
+                margin-bottom: 20px;
+            }; 
+        };
+    };
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .introduce {
+        margin-bottom: 50px;
+            &-title {
+                margin-bottom: 20px;
+            }; 
+        };
+    };
+    @media (min-width: 768px) and (max-width: 991.98px) { 
+        .introduce {
+            margin-bottom: 50px;
+                &-title {
+                margin-bottom: 20px;
+            }; 
+        };
+    };
+    @media (min-width: 992px) and (max-width: 1199.98px) { 
+        .introduce {
+            margin-bottom: 50px;
+                &-title {
+                margin-bottom: 20px;
+            }; 
+        };
+    };
+};

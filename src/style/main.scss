@@ -1,0 +1,11 @@
+
+@import '../../node_modules/normalize-scss/sass/normalize/import-now';//resetCSS
+@import './utils/variables' ;//Variables for task'
+@import './utils/mixins';//mixins for tstk
+@import './base/fonts.scss';// link our fonts
+
+@import '../../node_modules/slick-carousel/slick/slick.scss';//slickSlider style
+@import '../../node_modules/slick-carousel/slick/slick-theme.scss';//Slick Theme
+
+*{box-sizing: border-box};
+@import './components/menu.scss';
