@@ -7,5 +7,6 @@
 @import '../../node_modules/slick-carousel/slick/slick.scss';//slickSlider style
 @import '../../node_modules/slick-carousel/slick/slick-theme.scss';//Slick Theme
 
-*{box-sizing: border-box};
-@import './components/menu.scss';
+
+@import './components/1_menu.scss';
+@import './components/2_slide-show.scss';

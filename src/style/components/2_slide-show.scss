@@ -1,0 +1,84 @@
+.carousel {
+    width: 100%;
+    &:hover {
+        .carousel--img {
+            filter: brightness(100%);
+        }
+    }
+    &--img {
+        width: 100%;
+        filter: brightness(30%);
+        transition: .2s all;
+    };
+    &--item {
+        position: relative;
+
+        .info {
+            position: absolute;
+            z-index: 1;
+            top:55%;
+            left:50%;
+            transform: translate(-50%, -55%);
+            width: 71%;
+
+
+            &--title {
+                @include font-style($raleway-bo, 30px, $w);
+                line-height: 1.2;
+                text-align: center;
+                margin: 0px 0px 45px 0px;
+                .colored {
+                    color:$hover-red;
+                };
+            };
+
+            &--text {
+                @include font-style($lato-r, 16px, $w);
+                line-height: 1.375;
+                text-align: center;
+                margin: 0px 0px 50px 0px;
+               
+            };
+
+            .button-wrapper {
+                display: flex;
+                justify-content: center;
+
+
+                .btn {
+                    @include font-style($raleway-m, 20px, $w, uppercase);
+                    background: #131313;
+                    padding: 17px 40px 18px 40px;
+                    border: none;
+                    outline: none;
+                    margin: 0px 15px;
+                }
+            };
+        };
+    };
+
+   
+
+};
+
+.slick-arrow {
+    z-index:1;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    color: $hover-red;
+    position: absolute;
+    background: transparent;
+    &.prev {
+        top:50%;
+        left: 0px;
+        background:transparent;
+        transform: translateY(-50%);
+    };
+    &.next {
+        top:50%;
+        right: 0px;
+        background:transparent;
+        transform: translateY(-50%);
+    };
+};
