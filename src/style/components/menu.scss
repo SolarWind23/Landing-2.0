@@ -10,105 +10,154 @@
     &:hover { 
         opacity:1; 
     };
-
-  
-
+    @media (min-width: 992px) and (max-width: 1200px){
+        padding: 0px 50px 0px 40px;
+    };
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        padding: 0px 30px 0px 30px;
+    };
     .menu {
-       
         position: relative;
+
         &--logo {
            top:-3px;
            position: absolute;
-            
-            .logo {
-              width: 100%;
+           
+           .logo {
+               width: 100%;
             };
-        
         };
 
         &--navigation {
            display: flex;
            padding-left: 341px;
            justify-content: space-between;
-         
-            .collapce {
-                display: none;
-                &.show {
-                    display: flex;
-                    opacity: 1;
-                    transition: all 15.0s;
-                  };
-            };
-            .links {
-                margin: 0px;
-                width: 100%;
-                padding: 0px;
-                display: flex;
-                justify-content: space-around;
-                transition: all 15.0s;
-              
-                &--item {
-                   display: flex;
-                   opacity: 0;
-                   padding: 26px 0px;
-                   position: relative;
-                   align-items: center;
-                   flex-direction: column;
-                   justify-content: space-around;
-                   transition: all 1.5s;
-                    .item {
-                        text-decoration: none;
-                        @include font-style($raleway-r, 18px, $gray, uppercase);
-                    };
 
-                    &::before {
-                        content: ' ';
-                        width: 38.8%;
-                        height: 3px;
-                        background-color: transparent;
-                        position: absolute;
-                        top:-3px;
-                    };
-                    &::after {
-                        content: ' ';
-                        width: 38.8%;
-                        height: 2px;
-                        background-color: transparent;
-                        position: absolute;
-                        bottom:0px;
-                    };
-                    &:hover {
-                        .item {
-                            color: $w;
-                            background: transparent;
-                        }
-                      
-                        &::before, &::after {
-                            background-color: $hover-red;
-                        };
-                    };
-                    &.respons {
-                        opacity: 1;       
-                    };
-                };
-               
-              
+            @media (min-width: 992px) and (max-width: 1200px) {
+                padding-left: 270px;
+                align-items: flex-end;
+                flex-direction: column;
+                transition: all .6s;
+            };
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                padding-left: 251px;
+                transition: all .6s;
             };
            
+            .collapce {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transition: all .6s;
 
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                   visibility: hidden;
+                    height: 0px;
+                };
+                &.show {
+                    width: 100%;
+                    height:600px;
+                    display: flex;
+                    overflow:visible;
+                    transition: all .6s;
+                    align-items: center;
+                    visibility: visible;
+                };
+                .links {
+                    margin: 0px;
+                    width: 100%;
+                    padding: 0px;
+                    display: flex;
+                    overflow-x: hidden;
+                    transition: all .1s;
+                    justify-content: space-around;
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        top: 0px;
+                        height: 0px;
+                        overflow: hidden;
+                        position: absolute;
+                        align-items: center;
+                        transition: all .1s;
+                        flex-direction: column;
+                    };
+                    &.show {
+                      
+                        width: 100%;
+                        height:100%;
+                        display: flex;
+                        transition: all .6s;
+                    };
+                    &--item {
+                       display: flex;
+                       padding: 26px 0px;
+                       position: relative;
+                       align-items: center;
+                       flex-direction: column;
+                       justify-content: space-around;
+
+                       @media (min-width: 768px) and (max-width: 991.98px) {
+                            padding: 15px 0px;
+                            
+                        };
+                        .item {
+                            text-align: center;
+                            text-decoration: none;
+                            @include font-style($raleway-r, 18px, $gray, uppercase);
+                            @media (min-width: 992px) and (max-width: 1200px) {
+                                @include font-style($raleway-r, 16px, $gray, uppercase);
+                            };
+                        };
+    
+                        &::before {
+                            top:-3px;
+                            height: 3px;
+                            content: '';
+                            width: 38.8%;
+                            position: absolute;
+                            background-color: transparent;
+                            @media (min-width: 768px) and (max-width: 991.98px) {
+                                top:0px;
+                            };
+                        };
+                        &::after {   
+                            bottom:0px;
+                            height: 2px;
+                            content: '';
+                            width: 38.8%;
+                            position: absolute;
+                            background-color: transparent;
+                        };
+                        &:hover {
+                            .item {
+                                color: $w;
+                                background: transparent;
+                            }
+                          
+                            &::before, &::after {
+                                background-color: $hover-red;
+                            };
+                        };
+                    };
+                };
+            };
+            
+           
             .icon {
                width: 45px;
-               display: flex;
-               transition: all 1.2s;
+               display: none;
+               transition: all .6s;
                flex-direction: column;
                justify-content: center;
-                
+               @media (max-width: 992px)  {
+                    display: flex;
+                    height: 45px;
+                };
                 .bar {
                    height: 5px;
                    width: 100%;
                    background: $w;
                    margin: 5px 0px;
-                   transition: all 1.2s;
+                   transition: all .6s;
                 };
                 
                 &.changed {
