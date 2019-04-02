@@ -1,0 +1,151 @@
+.social-media {
+    cursor: pointer;
+    position: relative;
+    background: url('../img/social-media-bg.png'), no-repeat, center;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0px;
+    @media (max-width: 575.98px) { 
+        padding: 50px 0px;
+    };
+    @media (min-width: 576px) and (max-width: 767.98px)  {
+        padding: 50px 0px;
+    };
+    display: flex;
+    flex-direction: column;
+
+    .content-wrapper {
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        width: 81.42%;
+        padding: 0px 15px;
+    }
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+      
+        @include font-style($raleway-bo, 30px, $w);
+        .colored {
+            color:$hover-red;
+        };
+        @media (max-width: 575.98px) { 
+            margin-bottom: 20px;
+            @include font-style($raleway-bo, 25px, $w);
+        };
+        @media (min-width: 576px) and (max-width: 767.98px)  {
+            margin-bottom: 20px;
+            @include font-style($raleway-bo, 25px, $w);
+        };
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            margin-bottom: 30px;
+            @include font-style($raleway-bo, 30px, $w);
+        };
+    };
+
+    .links {
+        display: flex;
+        
+        .link {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            @media (max-width: 575.98px) {
+               margin-bottom: 20px;
+            };
+            @media (min-width: 576px) and (max-width: 767.98px)  {
+                margin-bottom: 30px;
+            };
+            
+            
+            @include hexagon(75px,75px,transparent, 0px);
+            .hexagon {
+                text-align: center;
+                border-top:1px solid $hover-red;
+                border-bottom:1px solid $hover-red;
+
+                &::after {
+                    border-top:1px solid $hover-red;
+                    border-bottom:1px solid $hover-red;
+                };
+                &::before {
+                    border-top:1px solid $hover-red;
+                    border-bottom:1px solid $hover-red;
+                };
+
+                .simbol {
+                    color: $hover-red;
+                    font-size: 20px;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            };
+            @media (max-width: 575.98px) {
+                @include hexagon(45px,45px,transparent, 0px);
+                .hexagon {
+                    text-align: center;
+                    border-top:1px solid $hover-red;
+                    border-bottom:1px solid $hover-red;
+    
+                    &::after {
+                        border-top:1px solid $hover-red;
+                        border-bottom:1px solid $hover-red;
+                    };
+                    &::before {
+                        border-top:1px solid $hover-red;
+                        border-bottom:1px solid $hover-red;
+                    };
+    
+                    .simbol {
+                        color: $hover-red;
+                        font-size: 20px;
+                        position: absolute;
+                        z-index: 1;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                };
+            };
+
+            &:hover {
+                .hexagon {
+                    background: $hover-red;
+                };
+                .simbol {
+                    color: $w;
+                }
+            };
+
+            .info {
+                margin-top: 40px;
+                @include font-style ($lato-r,16px,$w);
+                @media (max-width: 575.98px) {
+                    margin-top: 10px;
+                    @include font-style ($lato-r,15px,$w);
+                };
+                @media (min-width: 576px) and (max-width: 767.98px) {
+                    margin-top: 10px;
+                    @include font-style ($lato-r,15px,$w);
+                };
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                    margin-top: 25px;
+                    @include font-style ($lato-r,16px,$w);
+                };
+            }
+            
+        };
+
+        
+    };
+    @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px);
+    @media (max-width: 575.98px) { 
+        @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px,50%);
+    };
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px,30%);
+    };
+};

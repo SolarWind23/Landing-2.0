@@ -58,43 +58,7 @@
         transform: translateX(-50%);
         z-index: 890;
 
-        @include hexagon($width,$height, $bg-color);
-        // .hexagon-wrapper {
-        //     width: $width;
-        //     height: $height;
-        //     text-align: center;
-        //     position: relative;
-        //     display: inline-block;
-        // };
-    
-        // .hexagon {
-        //     height: 100%;
-        //     width: calc(100% * 0.57735);
-        //     display: inline-block;
-        //     background-color:$bg-color;
-        // };
-        
-        // .hexagon:before {
-        //     position: absolute;
-        //     top: 0;
-        //     right: calc((100% / 2) - ((100% * 0.57735) / 2));
-        //     background-color: inherit;
-        //     height: inherit;
-        //     width: inherit;
-        //     content: '';
-        //     transform: rotateZ(60deg);
-        // };
-        
-        // .hexagon:after {
-        //     position: absolute;
-        //     top: 0;
-        //     right: calc((100% / 2) - ((100% * 0.57735) / 2));
-        //     background-color: inherit;
-        //     height: inherit;
-        //     width: inherit;
-        //     content: '';
-        //     transform: rotateZ(-60deg);
-        // };
+        @include hexagon($width,$height, $bg-color,0px);
     
         &-side{
             border:1px solid $bg-color;
@@ -105,20 +69,28 @@
 
 @mixin introduce ($marginContainer:0px, $marginTitle:0px, $colorTitle:$w, $colorText:$w) {
     .introduce {
+        display: flex;
+        width: 81.42%;
         text-align: center;
-        margin-bottom:$marginContainer;
+        align-items: center;
+        flex-direction: column;
+        margin: 0px auto $marginContainer auto;
+        
+        
+        
 
         &-title {
             @include font-style($raleway-bo, 30px, $colorTitle);
-            margin-bottom: $marginTitle;
+            margin: 0px 0px $marginTitle 0px;
         };
 
         .colored {
-            color:$r;
+            color:$hover-red;
         };
 
         &-text {
-            @include font-style($lato-bo, 16px, $colorText);  
+            @include font-style($lato-bo, 16px, $colorText);   
+            
         };  
     };
 };
@@ -156,3 +128,18 @@
         };
     };
 };
+@mixin hexagon-border ($height:1px, $type:solid, $color:black) {
+    .hexagon {
+
+        border: $height $type $color;
+
+        &::after {
+            border-top: $height $type $color;
+            border-bottom: $height $type $color;
+        };
+        &::before {
+            border-top: $height $type $color;
+            border-bottom: $height $type $color;
+        }
+    };
+}
