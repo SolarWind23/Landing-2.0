@@ -69,6 +69,7 @@
 
 @mixin introduce ($marginContainer:0px, $marginTitle:0px, $colorTitle:$w, $colorText:$w) {
     .introduce {
+        z-index: 1;
         display: flex;
         width: 81.42%;
         text-align: center;
@@ -76,10 +77,8 @@
         flex-direction: column;
         margin: 0px auto $marginContainer auto;
         
-        
-        
-
         &-title {
+            z-index: 1;
             @include font-style($raleway-bo, 30px, $colorTitle);
             margin: 0px 0px $marginTitle 0px;
         };
@@ -89,6 +88,7 @@
         };
 
         &-text {
+            z-index: 1;
             @include font-style($lato-bo, 16px, $colorText);   
             
         };  
@@ -142,4 +142,4 @@
             border-bottom: $height $type $color;
         }
     };
-}
+};
