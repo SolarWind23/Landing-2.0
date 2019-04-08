@@ -1,0 +1,35 @@
+.footer {
+    background: $bl-darck;
+    position: relative;
+    text-align: right;
+    padding: 30px 43px;
+    @media (max-width: 575.98px) { 
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+        .footer-logo {
+            position: relative;
+            margin-bottom: 10px;
+        };
+    };
+    &--logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media (max-width: 575.98px) { 
+            object-fit: contain;
+            position: relative;
+            margin-bottom: 10px;
+        };
+       
+    };
+ 
+    .copy-right {
+    
+        @include font-style($lato-r, 16px, $gray-light);
+       
+    };
+      
+};
