@@ -1,6 +1,6 @@
 .about-us {
     display: flex;
-    padding:100px 0px 0px 0px;
+    padding:100px 0px 98px 0px;
     align-items: center;
     flex-direction: column;
     @include introduce (102px, 50px, $b, $b);
@@ -8,15 +8,15 @@
         @include introduce (80px, 50px, $b, $b);
     };
     @media (min-width: 768px) and (max-width: 991.98px) {
-        padding:50px 0px 0px 0px;
+        padding:50px 0px 50px 0px;
         @include introduce (50px, 30px, $b, $b);
     }
     @media (min-width: 576px) and (max-width: 767.98px) {
-        padding:50px 0px 0px 0px;
+        padding:50px 0px 50px 0px;
         @include introduce (50px, 30px, $b, $b);
     }; 
     @media (max-width: 575.98px) {
-        padding:50px 0px 0px 0px;
+        padding:50px 0px 50px 0px;
         @include introduce (5px, 10px, $b, $b);
     }; 
     

@@ -5,7 +5,7 @@
     opacity: 0.7;
     position: fixed;
     box-sizing: border-box;
-    background-color: #000000;
+    background-color: $b;
     padding: 0px 107px 0px 115px;
     border-top: 3px solid #7f7f7f;
     &:hover { 
@@ -209,7 +209,7 @@
             };
             
            
-            .icon {
+            .burger-icon {
                width: 45px;
                display: none;
                transition: all .6s;
