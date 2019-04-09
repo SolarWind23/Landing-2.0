@@ -1,10 +1,10 @@
 $(function(){
     let collapce = $('.collapce');
     let links = $('.links');
-    let burger = $('.icon');
+    let burger = $('.burger-icon');
     let header = $('.header');
     console.log(header)
-    $(".icon").click( function(e){
+    $('.burger-icon').click( function(e){
         this.classList.toggle("changed");
         collapce[0].classList.toggle("show");
         links[0].classList.toggle("show");
