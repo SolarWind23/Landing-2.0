@@ -4,28 +4,26 @@
     align-items: center;
     flex-direction: column;
     @include introduce (102px, 50px, $b, $b);
-    @media (min-width: 992px) and (max-width: 1199.98px) {
+    @media (min-width: 992px) and (max-width: 1199px) {
         @include introduce (80px, 50px, $b, $b);
     };
-    @media (min-width: 768px) and (max-width: 991.98px) {
+    @media (min-width: 768px) and (max-width: 991px) {
         padding:50px 0px 50px 0px;
         @include introduce (50px, 30px, $b, $b);
     }
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (min-width: 576px) and (max-width: 767px) {
         padding:50px 0px 50px 0px;
         @include introduce (50px, 30px, $b, $b);
     }; 
-    @media (max-width: 575.98px) {
-        padding:50px 0px 50px 0px;
+    @media (max-width: 575px) {
+        padding:50px 15px 50px 15px;
         @include introduce (5px, 10px, $b, $b);
-    }; 
+    };
     
     .content-wrapper {
-        margin: auto;
         display: flex;
-        width: 81.42%;
-        padding: 0px 15px;
-        @media (max-width: 991.98px) {
+        @include content-wrapper();
+        @media (max-width: 991px) {
            flex-direction: column;
         }
 
@@ -35,7 +33,7 @@
             flex-basis: 350px;
             padding: 0px 15px;
             flex-direction: column;
-            @media (max-width: 991.98px) {
+            @media (max-width: 991px) {
                 order: 2;
             };
 
@@ -44,17 +42,17 @@
                 text-align: justify;
                 margin: 0px 0px 41px 0px;
                 @include font-style($lato-r, 16px, $bl-light);
-                @media  (max-width: 991.98px) { 
+                @media  (max-width: 991px) { 
                     text-align: center;
                 };
               
             };
 
             .acordion {
-                &--card {
+                &-card {
                     margin-bottom: 10px;
                 };
-                &--title {
+                &-title {
                     width: 100%;
                     outline: none;
                     cursor: pointer;
@@ -63,7 +61,7 @@
                     border: 1px solid $gray-light;
                     background-color: $super-gray-light;
                     @include font-style($raleway-m,20px,$bl-darck);
-                    @media (max-width: 400.98px) {
+                    @media (max-width: 400px) {
                         @include font-style($raleway-m,15px,$bl-darck);
                     };
                     &-icon {
@@ -78,7 +76,7 @@
                     };
 
                 };
-                &--content {
+                &-content {
                     opacity: 0;
                     max-height: 0px;
                     padding: 0 18px;
@@ -107,91 +105,99 @@
             position: relative;
             align-items: center;
             justify-content: center;
-            transition: all 1s;
-            @media (min-width: 992px) and (max-width: 1199.98px) { 
+            @media (min-width: 992px) and (max-width: 1199px) { 
                 padding: 0px 50px;
             };
-            @media (min-width: 768px) and (max-width: 991.98px) {
+            @media (min-width: 768px) and (max-width: 991px) {
                 margin: 0px 0px 50px 0px; 
                 justify-content: center;
             }
-            @media (min-width: 576px) and (max-width: 767.98px) {
+            @media (min-width: 576px) and (max-width: 767px) {
                 justify-content: center;
             };
-            @media (max-width: 575.98px) {
+            @media (max-width: 575px) {
                 align-content: flex-end;
                 flex-shrink: 1;
             };
-            &--img-left {
+            &-img-left {
                 left: 0;
                 position: absolute;
                 transition: all 1s;
-                @media (min-width: 992px) and (max-width: 1199.98px) { 
+
+                @media (min-width: 992px) and (max-width: 1199px) { 
                     width: 65%;
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     height: 70%;
                     left:14.5%;
                 };
-                @media (min-width: 650px) and (max-width: 767.98px) {
+                @media (min-width: 650px) and (max-width: 767px) {
                     height: 60%;
                     left:10%;
                 };
-                @media (min-width: 576px) and (max-width: 649.98px) {
+                @media (min-width: 576px) and (max-width: 649px) {
                     height: 60%;
                     left:4.5%;
                 };
-                @media (min-width: 401px) and (max-width: 575.98px) {
+                @media (min-width: 501px) and (max-width: 575px) {
                     height: 50%;
-                    left:5.5%;
+                    left:16.5%;
                 };
-                @media (max-width: 400.98px) {
+                @media (min-width: 401px) and (max-width: 500px) {
                     height: 50%;
-                    left:-5.5%;
+                    left:10.5%;
                 };
-              
+                @media (max-width: 400px) {
+                    height: 50%;
+                    left:-0.5%;
+                };
             };
-            &--img-center {
+            &-img-center {
                 top:5px;
                 left: 50%;
                 position: absolute;
                 transition: all 1s;
                 transform: translateX(-50%);
-                @media (max-width: 1199.98px) { 
+                @media (max-width: 1199px) { 
                     height: 97%;
                 };
-                @media (max-width: 575.98px) {
+                @media (max-width: 575px) {
                     height: 96%;
                 };
                
                 
-            }
-            &--img-right {
+            };
+            &-img-right {
                 right: 0;
                 position: absolute;
                 transition: all 1s;
-                @media (min-width: 992px) and (max-width: 1199.98px) { 
+
+                @media (min-width: 992px) and (max-width: 1199px) { 
                     width: 65%;
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     height: 70%;
                     right:14.5%;
                 };
-                @media (min-width: 650px) and (max-width: 767.98px) {
+                @media (min-width: 650px) and (max-width: 767px) {
                     height: 60%;
                     right:10%;
                 };
-                @media (min-width: 576px) and (max-width: 649.98px) {
+                @media (min-width: 576px) and (max-width: 649px) {
                     height: 60%;
                     right:4.5%;
                 };
-                @media (min-width: 401px) and (max-width: 575.98px) {
+                @media (min-width: 501px) and (max-width: 575px) {
                     height: 50%;
-                    right:5.5%;
+                    right:16.5%;
                 };
-                @media (max-width: 400.98px) {
+                @media (min-width: 401px) and (max-width: 500px) {
                     height: 50%;
-                    right:-5.5%;
+                    right:10.5%;
+                };
+                @media (max-width: 400px) {
+                    height: 50%;
+                    right:-0.5%;
                 };
             };
 
@@ -201,20 +207,19 @@
                 position: relative;
                 transition: all 1s;
                 z-index: 890;
-                @include hexagon (370px,  370px, $hover-red, 0px);
+                @include hexagon (370px,  370px, $w, 0px);
 
-              
-                @media (min-width: 992px) and (max-width: 1199.98px) { 
-                    @include hexagon (335px,  335px, $hover-red, 0px);
+                @media (min-width: 992px) and (max-width: 1199px) { 
+                    @include hexagon (335px,  335px, $w, 0px);
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
-                    @include hexagon (335px,  335px, $hover-red, 0px);
+                @media (min-width: 768px) and (max-width: 991px) {
+                    @include hexagon (335px,  335px, $w, 0px);
                 }
-                @media (min-width: 576px) and (max-width: 767.98px) {
-                    @include hexagon (290px,  290px, $hover-red, 0px);
+                @media (min-width: 576px) and (max-width: 767px) {
+                    @include hexagon (290px,  290px, $w, 0px);
                 };
-                @media (max-width: 575.98px) {
-                    @include hexagon (200px,  200px, $hover-red, 0px);
+                @media (max-width: 575px) {
+                    @include hexagon (200px,  200px, $w, 0px);
                 };
             };
         };
@@ -223,10 +228,10 @@
             display: flex;
             flex-wrap: wrap;
             text-align: center;
-            @media (min-width: 768px) and (max-width: 991.98px) {
+            @media (min-width: 768px) and (max-width: 991px) {
                 justify-content: space-between;
             };
-            @media  (max-width: 767.98px) { 
+            @media  (max-width: 767px) { 
                 justify-content: center; 
             };
             .item {
@@ -239,24 +244,24 @@
                     width: 15%;
                     flex-grow: 1;
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                    width: 45%; 
                    margin-bottom: 15px;
                 };
-                @media (min-width: 576px) and (max-width: 767.98px) { 
+                @media (min-width: 576px) and (max-width: 767px) { 
                     width: 40%; 
                     margin-bottom: 15px;    
                 };
-                @media (max-width: 575.98px) {
+                @media (max-width: 575px) {
                     width: 100%; 
                     margin-bottom: 55px;   
                 };
-                &--icon {
+                &-icon {
                     position: relative;
                     margin-bottom:35px;
                     @include hexagon(90px,90px,$w,auto);
                     @include hexagon-border(1px, solid, $b);
-                    @media  (max-width: 991.98px) {
+                    @media  (max-width: 991px) {
                         @include hexagon(85px,85px,$w,auto);
                         @include hexagon-border(1px, solid, $b);
                         margin-bottom: 20px;
@@ -275,37 +280,37 @@
                         .simbol{color:$w;};
                         @include hexagon(90px,90px,$hover-red,auto);
                         @include hexagon-border(1px, solid, $w);
-                        @media  (max-width: 991.98px) {
+                        @media  (max-width: 991px) {
                             @include hexagon(85px,85px,$hover-red,auto);
                             @include hexagon-border(1px, solid, $w);
                         }
                     };
                 };
-                &--title {
+                &-title {
                     @include font-style ($raleway-m,20px);
                     margin:0px 0px 28px 0px;
-                    @media (min-width: 768px) and (max-width: 991.98px) {
+                    @media (min-width: 768px) and (max-width: 991px) {
                         margin:0px 0px 18px 0px;
                     };
-                    @media (min-width: 576px) and (max-width: 767.98px) { 
+                    @media (min-width: 576px) and (max-width: 767px) { 
                         margin:0px 0px 15px 0px;
                     };
-                    @media (max-width: 575.98px) {
+                    @media (max-width: 575px) {
                         @include font-style ($raleway-m,16px);
                         margin:0px 0px 10px 0px;  
                     };
                 };
-                &--text {
+                &-text {
                     @include font-style ($lato-r,16px,$bl-light);
                     line-height: 1.375;
                     text-align: center; 
-                    @media (min-width: 768px) and (max-width: 991.98px) {
+                    @media (min-width: 768px) and (max-width: 991px) {
                         margin:0px 0px 18px 0px;
                     };  
-                    @media (min-width: 576px) and (max-width: 767.98px) { 
+                    @media (min-width: 576px) and (max-width: 767px) { 
                         margin:0px 0px 15px 0px;
                     };
-                    @media (max-width: 575.98px) {
+                    @media (max-width: 575px) {
                         @include font-style ($lato-r,15px,$bl-light);
                         margin:0px 0px 10px 0px;  
                     };
@@ -316,17 +321,17 @@
 
     .scrollbar-wrapper {
         width: 100%;
-        margin: 95px 0px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 95px 0px;
         position: relative;
+        align-items: center;
+        justify-content: center;
         @include scroll-bar (20px, 20px, $b, absolute, 0,0px);
 
-        @media (max-width: 575.98px) { 
+        @media (max-width: 575px) { 
             @include scroll-bar (20px, 20px, $b, absolute, 0,0px,50%);
         };
-        @media (min-width: 576px) and (max-width: 767.98px) {
+        @media (min-width: 576px) and (max-width: 767px) {
             @include scroll-bar (20px, 20px, $b, absolute, 0,0px,30%);
         };
     };
