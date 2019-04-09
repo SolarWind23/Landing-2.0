@@ -1,0 +1,121 @@
+.bestsellers {
+    padding: 110px 0px 100px 0px;
+    @include introduce (100px, 50px,$bl-darck,$bl-light);
+
+    .content-wrapper {
+        z-index: 1;
+        margin: auto;
+        width: 85.71%;
+        display: flex;
+        padding: 0px 15px;
+        position: relative;
+        justify-content: space-between;
+        @media (max-width: 991.98px) {
+            flex-wrap: wrap;
+        };
+        .offer {
+            &-item {
+                width: 25%;
+                flex-grow: 1;
+                display: flex;
+                padding: 0px 15px;
+                text-align: center;
+                flex-direction: column;
+                &:hover {
+                    .offer-price {
+                        color: $w;
+                        background: $hover-red;
+                        
+                        border: 1px solid $hover-red;
+                        border-bottom: none;
+
+                        .time {
+                            color: $w;
+                        };
+                    };
+                   .offer-datasheet {
+                        .order-now {
+                            color: $w;
+                            background: $hover-red;
+                        };
+                   };
+                  
+                };
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                    width: 45%;
+                    margin-bottom: 30px;
+                };
+                @media (min-width: 576px) and (max-width: 767.98px) {
+                    width: 40%;
+                    margin-bottom: 30px;
+                };
+                @media (max-width: 575.98px) {
+                    width: 90%;
+                    margin-bottom: 30px;
+                }; 
+            };
+            &-title {
+                background: $bl-darck;
+                margin: 0px;
+                padding: 15px 0px;
+                @include font-style($raleway-m, 20px, $w, uppercase);
+                @media (max-width: 767.98px) {
+                    padding: 10px 0px;
+                    @include font-style($raleway-m, 15px, $w, uppercase);
+                };
+            };
+            &-price {
+                margin: 0px;
+                padding: 20px 0px;
+                border: 1px solid $gray-light;
+                border-bottom: none;
+                @include font-style($lato-bl, 50px, $bl-darck, uppercase);
+                @media (min-width: 992px) and (max-width: 1199.98px) {
+                    @include font-style($lato-bl, 45px, $bl-darck, uppercase);
+                };
+                @media (max-width: 767.98px) {
+                    padding: 15px 0px;
+                    @include font-style($lato-bl, 40px, $bl-darck, uppercase);;
+                };
+                .time {
+                    margin-left: 8px;
+                    @include font-style($lato-r, 16px, $bl-darck);
+                };
+            };
+            &-datasheet {
+                list-style: none;
+                padding: 0px;
+                margin: 0;
+                border: 1px solid $gray-light;
+                @include font-style($lato-r, 16px, $bl-darck, uppercase);
+                @media (min-width: 992px) and (max-width: 1199.98px) {
+                    @include font-style($lato-r, 13px, $bl-darck, uppercase);
+                };
+                @media (max-width: 767.98px) {
+                    @include font-style($lato-r, 14px, $bl-darck, uppercase);
+                };
+                .text {
+                    padding: 20px 0px;
+                    border: 1px solid $gray-light;
+                    @media (min-width: 576px) and (max-width: 767.98px) {
+                        padding: 15px 0px;
+                    };
+                };
+                .btn {
+                    padding: 20px 0px;
+                    .order-now {
+                        width: 80%;
+                        padding: 12px 0px;
+                        outline: none;
+                        border: none;
+                        background: $bl-darck;
+                        @include font-style($raleway-r, 18px, $w, uppercase);
+                    };
+                };
+            };
+           
+
+        };
+    
+    };
+};

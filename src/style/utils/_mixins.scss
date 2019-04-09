@@ -44,6 +44,21 @@
         transform: rotateZ(-60deg);
     }
 }
+@mixin hexagon-border ($height:1px, $type:solid, $color:black) {
+    .hexagon {
+
+        border: $height $type $color;
+
+        &::after {
+            border-top: $height $type $color;
+            border-bottom: $height $type $color;
+        };
+        &::before {
+            border-top: $height $type $color;
+            border-bottom: $height $type $color;
+        }
+    };
+};
 
 @mixin scroll-bar ($width,  $height, $bg-color, $position, $marging:0px, $y:0%, $sideWidth:17.7%) {
     .scrollbar {
@@ -128,18 +143,38 @@
         };
     };
 };
-@mixin hexagon-border ($height:1px, $type:solid, $color:black) {
-    .hexagon {
-
-        border: $height $type $color;
-
-        &::after {
-            border-top: $height $type $color;
-            border-bottom: $height $type $color;
+@mixin content-wrapper () {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media (min-width: 1200px) {
+        &{
+            max-width: 1140px;
         };
-        &::before {
-            border-top: $height $type $color;
-            border-bottom: $height $type $color;
-        }
     };
+    @media (min-width: 992px) and (max-width: 1199px){
+        &{
+            max-width: 960px;
+        };
+    };
+    @media (min-width: 768px) and (max-width: 991px){
+        &{
+            max-width: 720px;
+        };
+    };
+    @media (min-width: 576px) and (max-width: 767px) {
+        &{
+            
+            max-width: 540px;
+        };
+    };
+    @media (max-width: 575px) {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    };
+
 };
+

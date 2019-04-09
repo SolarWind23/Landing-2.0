@@ -1,0 +1,119 @@
+.portfolio {
+    position: relative;
+    text-align: center;
+    background: $bl-darck;
+    padding: 98px 0px 0px 0px;
+    
+
+    &-title {
+        margin: 0px 0px 25px 0px;
+        @include font-style($raleway-bo,30px,$w)
+    };
+    .nav-tab-panel {
+
+        padding: 0;
+        display: flex;
+        margin-bottom: 100px;
+        list-style-type: none;
+        justify-content: center;
+
+        @media (max-width: 575.98px) {
+            margin-bottom: 30px;
+            flex-direction: column;
+            
+        };
+        .item {
+            margin: 0px 20px;
+            @media (max-width: 575.98px) {
+                margin: 15px 0px;
+            };
+        };
+        .tab-panel-link {
+            text-decoration: none;
+            @include font-style($lato-bo,16px,$gray, uppercase);
+            &.active {
+                color: $hover-red;
+            };
+        };
+    };
+   
+
+    .tab-panel {
+        display: none;
+        flex-wrap: wrap;
+        animation: fadeEffect 1s;
+        .item-wrapper {
+            flex-grow: 1;
+            position: relative;
+            .item-img {
+                width: 100%;
+                height: 100%;
+                transition: .8s all;
+                filter: brightness(100%);
+                @media (max-width: 767px) {
+                    width: 100%;
+                    object-fit: cover;
+                };
+            };
+        
+            .add {
+                position: absolute;
+                top: 50%;
+                left: 50%;transform: translate(-50%, -50%);
+               
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: transparent;
+                outline: none;
+                border: none;
+                opacity: 0;
+                transition: .8s all;
+                text-decoration: none;
+
+                &-icon {
+                    color: $w;
+                    font-size: 30px;
+                };
+                .text {
+                    
+                    margin-top: 28px;
+                    @include font-style($lato-r,16px,$w);
+                };
+            };
+
+            &:hover {
+                .item-img {
+                    filter: brightness(30%);
+                };
+                .add {
+                    opacity: 1;
+                };
+            };
+        };
+        
+
+        &.active {
+            display: flex;
+            opacity: 1;
+            transform: scale(1);
+        };
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            };
+            to {
+                opacity: 1;
+            };
+        };
+    };
+    @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px);
+    @media (max-width: 575.98px) { 
+        @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px,50%);
+    };
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px,30%);
+    };
+};

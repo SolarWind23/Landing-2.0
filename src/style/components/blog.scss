@@ -1,0 +1,143 @@
+.blog {
+    @include introduce (100px, 50px, $b,$b);
+    padding: 110px 0px 50px 0px;
+    @media (max-width:  1199.98px) { 
+        padding: 40px 0px 50px 0px;
+        @include media-introduce();
+    }; 
+    
+    .content-wrapper {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 81.42%;
+        padding: 0px 15px;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        .card {
+            display: flex;
+            padding: 0px 15px;
+            margin-bottom: 50px;
+            border: none;
+            @media (max-width: 767.98px) {
+               flex-direction: column;
+            }; 
+            &--img {
+                width: 100%;
+                flex-basis: 33%;
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                    flex-basis: 40%;
+                };
+                @media (max-width: 767.98px) {
+                    margin-bottom: 15px;
+                }; 
+                .card--logo {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 1;
+                    transition: all .5s;
+                };
+              
+            };
+            &--body {
+                padding:0px 30px;
+                display: flex;
+                flex-direction: column;
+                flex-basis: 66%;
+                @media (min-width: 768px) and (max-width: 991.98px) {
+                    flex-basis: 60%;
+                };
+                @media (max-width: 575.98px) {
+                   text-align: center;
+                   padding: 0px;
+                }; 
+                .title {
+                    margin: 0px 0px 0px 0px;
+                    @include font-style($raleway-sb,20px,$title-blog);
+                    @media (max-width: 575.98px) {
+                        text-align: center;
+                    };
+                };
+                .info {
+                    margin:20px 11px;
+                    @include font-style($lato-r,12px,$icons-blog);
+                    &-status,&-comment,&-view {
+                        margin-right: 8px;
+                    };
+                };
+                .text {
+                    margin:0px 0px 26px 0px;
+                    @include font-style($lato-r,16px,$gray); 
+                    @media (min-width: 768px) and (max-width: 991.98px) {
+                        font-size: 15px;
+                    };
+                    @media (max-width: 575.98px) {
+                       text-align: center;
+                       font-size: 15px;
+                    };
+                };
+                .btn {
+                    @include font-style($lato-r,16px,$w,uppercase);
+                    padding: 15px;
+                    line-height: 1.2;
+                    text-align: center;
+                    border-radius: none;
+                    border: none;
+                    display: flex;
+                    align-self: flex-start;
+                    background: $bl-bg;
+                    @media (max-width: 575.98px) {
+                        align-self: center;
+                    }; 
+                    &:focus{
+                        border: none;
+                        outline: none;
+                        box-shadow: none !important;
+                    };
+                };
+                
+            };
+            &:hover {
+                
+               .card--logo {
+                   opacity: 0.5;
+               };
+                
+                .btn {
+                   background: $hover-red;
+                   border: none;
+                   outline: none;
+                   box-shadow: none;
+                   transition: all .5s;
+                };
+            };
+        };
+
+        .show-more {
+            background: $super-gray-light;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 40px;
+            transition: all .8s;
+        };
+        .another-posts {
+            display: flex;
+            flex-direction: column;
+            transition: all .8s;
+            align-items: center;
+            max-height: 0px;
+            overflow: hidden;
+            &.show {
+                max-height: 100%;
+            };
+        };
+        
+         
+    };
+};
