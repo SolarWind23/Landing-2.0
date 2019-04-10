@@ -235,11 +235,22 @@
                 justify-content: center; 
             };
             .item {
-                display: flex;
                 flex-grow: 1;
+                display: flex;
+                cursor: pointer;
                 padding: 0px 15px;
                 align-items: center;
+                text-decoration: none;
                 flex-direction: column;
+                &:hover {
+                    .simbol{color:$w;};
+                    @include hexagon(90px,90px,$hover-red,auto);
+                    @include hexagon-border(1px, solid, $w);
+                    @media  (max-width: 991px) {
+                        @include hexagon(85px,85px,$hover-red,auto);
+                        @include hexagon-border(1px, solid, $w);
+                    };
+                };
                 @media (min-width: 992px) {
                     width: 15%;
                     flex-grow: 1;
@@ -260,7 +271,7 @@
                     position: relative;
                     margin-bottom:35px;
                     @include hexagon(90px,90px,$w,auto);
-                    @include hexagon-border(1px, solid, $b);
+                    @include hexagon-border(1.4px, solid, $b);
                     @media  (max-width: 991px) {
                         @include hexagon(85px,85px,$w,auto);
                         @include hexagon-border(1px, solid, $b);
@@ -275,15 +286,6 @@
                         top: 50%;
                         left:51%;
                         transform: translate(-50%, -50%);
-                    };
-                    &:hover {
-                        .simbol{color:$w;};
-                        @include hexagon(90px,90px,$hover-red,auto);
-                        @include hexagon-border(1px, solid, $w);
-                        @media  (max-width: 991px) {
-                            @include hexagon(85px,85px,$hover-red,auto);
-                            @include hexagon-border(1px, solid, $w);
-                        }
                     };
                 };
                 &-title {
@@ -315,8 +317,8 @@
                         margin:0px 0px 10px 0px;  
                     };
                 };
-            }
-       };
+            };
+        };
     };
 
     .scrollbar-wrapper {

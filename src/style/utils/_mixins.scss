@@ -4,7 +4,6 @@
     color: $color;
     text-transform: $transform;
 };
-
 @mixin hexagon ($width,  $height, $bg-color, $margin:20px) {
     .hexagon-wrapper {
         width: $width;
@@ -59,7 +58,6 @@
         }
     };
 };
-
 @mixin scroll-bar ($width,  $height, $bg-color, $position, $marging:0px, $y:0%, $sideWidth:17.7%) {
     .scrollbar {
         display: flex;
@@ -81,7 +79,6 @@
         };
     };
 };
-
 @mixin introduce ($marginContainer:0px, $marginTitle:0px, $colorTitle:$w, $colorText:$w) {
     .introduce {
         z-index: 1;
@@ -143,12 +140,12 @@
         };
     };
 };
-@mixin content-wrapper () {
+@mixin content-wrapper ($p:15px) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: $p;
+    padding-right: $p;
     @media (min-width: 1200px) {
         &{
             max-width: 1140px;
