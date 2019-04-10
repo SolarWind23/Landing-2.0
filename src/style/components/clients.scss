@@ -47,7 +47,16 @@
             order: 1;
             width: 100%;
         };
-      
+        @media (min-width: 1441px) {
+            .slick-track {
+                height: 100%;
+            };
+            .slick-slide {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            };
+        };
         &-item {
             &:focus {
                 border: none;
