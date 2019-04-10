@@ -82,7 +82,7 @@
                     overflow: hidden;
                     line-height: 1.571;
                     transition: all .5s;
-                    text-align: justifyLeft;
+                    text-align: left;
                     border: 1px solid $gray-light;
                     @include font-style($lato-r, 14px, $bl-light);
 

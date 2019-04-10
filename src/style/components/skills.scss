@@ -14,17 +14,16 @@
         @include introduce (50px, 30px, $b, $b);
     };
     .skill-bar.content-wrapper {
-        margin: auto;
-        width: 60.42%;
+        
         display: flex;
-        padding: 0px 15px;
+        @include content-wrapper();
         justify-content: space-around;
         &:hover {
             .circle {
                 animation: progress 2s ease-out forwards;
             };
         };
-        @media (max-width: 991.98px) {
+        @media (max-width: 991px) {
             flex-wrap: wrap;
         };
     
