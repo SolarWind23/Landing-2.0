@@ -25,7 +25,7 @@
         @include content-wrapper();
         @media (max-width: 991px) {
            flex-direction: column;
-        }
+        };
 
         .tabs {
             flex: 2;
@@ -45,7 +45,6 @@
                 @media  (max-width: 991px) { 
                     text-align: center;
                 };
-              
             };
 
             .acordion {
@@ -245,10 +244,10 @@
                 &:hover {
                     .simbol{color:$w;};
                     @include hexagon(90px,90px,$hover-red,auto);
-                    @include hexagon-border(1px, solid, $w);
+                    @include hexagon-border(1.4px, solid, $w);
                     @media  (max-width: 991px) {
                         @include hexagon(85px,85px,$hover-red,auto);
-                        @include hexagon-border(1px, solid, $w);
+                        @include hexagon-border(1.4px, solid, $w);
                     };
                 };
                 @media (min-width: 992px) {
@@ -274,17 +273,17 @@
                     @include hexagon-border(1.4px, solid, $b);
                     @media  (max-width: 991px) {
                         @include hexagon(85px,85px,$w,auto);
-                        @include hexagon-border(1px, solid, $b);
+                        @include hexagon-border(1.4px, solid, $b);
                         margin-bottom: 20px;
                     };
                    
                     .simbol {
+                        top: 50%;
+                        left:51%;
                         color: $b;
                         z-index: 1;
                         font-size: 30px;
                         position: absolute;
-                        top: 50%;
-                        left:51%;
                         transform: translate(-50%, -50%);
                     };
                 };
@@ -320,7 +319,6 @@
             };
         };
     };
-
     .scrollbar-wrapper {
         width: 100%;
         display: flex;
@@ -337,5 +335,4 @@
             @include scroll-bar (20px, 20px, $b, absolute, 0,0px,30%);
         };
     };
-    
-}
+};

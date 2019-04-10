@@ -12,6 +12,8 @@
         margin: $margin;
         position: relative;
         display: inline-block;
+        transition: all .8s;
+
     }
     
     .hexagon {
@@ -19,6 +21,7 @@
         height: 100%;
         width: calc(100% * 0.57735);
         display: inline-block;
+        
     }
     
     .hexagon:before {

@@ -3,77 +3,74 @@
     padding: 100px 0px 0px 0px;
     @include introduce (100px, 50px, $w, $gray);
 
-    @media (min-width: 992px) and (max-width: 1199.98px) {
+    @media (min-width: 992px) and (max-width: 1199px) {
         @include introduce (80px, 50px,  $w, $gray);
     };
-    @media (min-width: 768px) and (max-width: 991.98px) {
+    @media (min-width: 768px) and (max-width: 991px) {
         padding:50px 0px 0px 0px;
         @include introduce (50px, 30px,  $w, $gray);
     }
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (min-width: 576px) and (max-width: 767px) {
         padding:50px 0px 0px 0px;
         @include introduce (50px, 30px,  $w, $gray);
     }; 
-    @media (max-width: 575.98px) {
+    @media (max-width: 575px) {
         padding:50px 0px 0px 0px;
         @include introduce (50px, 20px,  $w, $gray);
     }; 
 
     .technology.content-wrapper {
-        margin: auto;
         display: flex;
         flex-wrap: wrap;
-        width: 81.42%;
-        padding: 0px 15px;
+        @include content-wrapper();
         justify-content: space-around;
         .item {
-            display: flex;
-            flex-direction: column;
             width: 45%;
+            display: flex;
             padding: 0px 15px;
+            flex-direction: column;
             margin: 0px 0px 40px 0px;
-            @media (max-width: 767.98px) {
+            @media (max-width: 767px) {
                 width: 100%;
                 margin: 0px 0px 40px 0px;
             }; 
             
-            &--title {
+            &-title {
                 display: flex;
                 align-items: center;
                 margin-bottom: 30px;
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     margin-bottom: 25px;
                     justify-content: center;
                 }
                 .item-icon {
                     position: relative;
-                    @include hexagon (60px, 60px, $gray, 0px);
                     margin-right: 35px;
-                    &-simbol {
+                    @include hexagon (60px, 60px, $gray, 0px);
+                    &-symbol {
+                        top:50%;
+                        left:50%;
+                        z-index: 1;
+                        font-size: 25px;
                         color: $bl-darck;
                         position: absolute;
-                        z-index: 1;
-                        left:50%;
-                        top:50%;
                         transform: translate(-50%, -50%);
-                        font-size: 25px;
                     };
                 };
                 .title-text {
                     margin: 0px 0px 0px 0px;
                     @include font-style ($raleway-m,20px,$w,uppercase);
-                   
                 };
             };
-            &--description {
-                background: $bl-bg-light;
-                margin: 0px 0px 0px 0px;
+            &-description {
                 padding: 30px;
+                margin: 0px 0px 0px 0px;
+                background: $bl-bg-light;
                 @include font-style($lato-r,16px,$gray);
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     text-align: center;
                 };
-                @media (max-width: 575.98px) {
+                @media (max-width: 575px) {
                     padding: 15px;
                     text-align: center;
                     @include font-style($lato-r,14px,$gray);
@@ -87,7 +84,7 @@
                         color: $w;
                     };
                 };
-                .item--description {
+                .item-description {
                     color:$w;
                     background: $hover-darck-red;
                 };
@@ -95,10 +92,10 @@
         };
     };
     @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px);
-    @media (max-width: 575.98px) { 
+    @media (max-width: 575px) { 
         @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px,50%);
     };
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (min-width: 576px) and (max-width: 767px) {
         @include scroll-bar (20px, 20px, $hover-red, relative, 70px, -11px,30%);
     };
 };

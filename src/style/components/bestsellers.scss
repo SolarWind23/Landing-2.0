@@ -4,13 +4,11 @@
 
     .content-wrapper {
         z-index: 1;
-        margin: auto;
-        width: 85.71%;
         display: flex;
-        padding: 0px 15px;
         position: relative;
+        @include content-wrapper();
         justify-content: space-between;
-        @media (max-width: 991.98px) {
+        @media (max-width: 991px) {
             flex-wrap: wrap;
         };
         .offer {
@@ -24,10 +22,9 @@
                 &:hover {
                     .offer-price {
                         color: $w;
-                        background: $hover-red;
-                        
-                        border: 1px solid $hover-red;
                         border-bottom: none;
+                        background: $hover-red;
+                        border: 1px solid $hover-red;
 
                         .time {
                             color: $w;
@@ -41,23 +38,23 @@
                    };
                   
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     width: 45%;
                     margin-bottom: 30px;
                 };
-                @media (min-width: 576px) and (max-width: 767.98px) {
+                @media (min-width: 576px) and (max-width: 767px) {
                     width: 40%;
                     margin-bottom: 30px;
                 };
-                @media (max-width: 575.98px) {
+                @media (max-width: 575px) {
                     width: 90%;
                     margin-bottom: 30px;
                 }; 
             };
             &-title {
-                background: $bl-darck;
                 margin: 0px;
                 padding: 15px 0px;
+                background: $bl-darck;
                 @include font-style($raleway-m, 20px, $w, uppercase);
                 @media (max-width: 767.98px) {
                     padding: 10px 0px;
@@ -67,37 +64,39 @@
             &-price {
                 margin: 0px;
                 padding: 20px 0px;
-                border: 1px solid $gray-light;
                 border-bottom: none;
+                transition: all .8s;
+                border: 1px solid $gray-light;
                 @include font-style($lato-bl, 50px, $bl-darck, uppercase);
-                @media (min-width: 992px) and (max-width: 1199.98px) {
+                @media (min-width: 992px) and (max-width: 1199px) {
                     @include font-style($lato-bl, 45px, $bl-darck, uppercase);
                 };
-                @media (max-width: 767.98px) {
+                @media (max-width: 767px) {
                     padding: 15px 0px;
                     @include font-style($lato-bl, 40px, $bl-darck, uppercase);;
                 };
                 .time {
                     margin-left: 8px;
+                    transition: all .8s;
                     @include font-style($lato-r, 16px, $bl-darck);
                 };
             };
             &-datasheet {
-                list-style: none;
-                padding: 0px;
                 margin: 0;
+                padding: 0px;
+                list-style: none;
                 border: 1px solid $gray-light;
                 @include font-style($lato-r, 16px, $bl-darck, uppercase);
-                @media (min-width: 992px) and (max-width: 1199.98px) {
+                @media (min-width: 992px) and (max-width: 1199px) {
                     @include font-style($lato-r, 13px, $bl-darck, uppercase);
                 };
-                @media (max-width: 767.98px) {
+                @media (max-width: 767px) {
                     @include font-style($lato-r, 14px, $bl-darck, uppercase);
                 };
                 .text {
                     padding: 20px 0px;
                     border: 1px solid $gray-light;
-                    @media (min-width: 576px) and (max-width: 767.98px) {
+                    @media (min-width: 576px) and (max-width: 767px) {
                         padding: 15px 0px;
                     };
                 };
@@ -105,17 +104,15 @@
                     padding: 20px 0px;
                     .order-now {
                         width: 80%;
-                        padding: 12px 0px;
-                        outline: none;
                         border: none;
+                        outline: none;
+                        padding: 12px 0px;
+                        transition: all .8s;
                         background: $bl-darck;
                         @include font-style($raleway-r, 18px, $w, uppercase);
                     };
                 };
             };
-           
-
         };
-    
     };
 };

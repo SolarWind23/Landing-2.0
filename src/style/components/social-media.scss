@@ -8,27 +8,24 @@
             filter: brightness(30%);
         };
     };
-
-    @media (max-width: 575.98px) { 
+    @media (max-width: 575px) { 
         padding: 50px 0px;
     };
-    @media (min-width: 576px) and (max-width: 767.98px)  {
+    @media (min-width: 576px) and (max-width: 767px)  {
         padding: 50px 0px;
     };
     
     .background-img {
-        position: absolute;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
         top: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
     };
     .content-wrapper {
         z-index: 1;
-        margin: auto;
         display: flex;
-        width: 81.42%;
-        padding: 0px 15px;
+        @include content-wrapper();
         justify-content: space-around;
     }
     .title {
@@ -40,15 +37,15 @@
         .colored {
             color:$hover-red;
         };
-        @media (max-width: 575.98px) { 
+        @media (max-width: 575px) { 
             margin-bottom: 20px;
             @include font-style($raleway-bo, 25px, $w);
         };
-        @media (min-width: 576px) and (max-width: 767.98px)  {
+        @media (min-width: 576px) and (max-width: 767px)  {
             margin-bottom: 20px;
             @include font-style($raleway-bo, 25px, $w);
         };
-        @media (min-width: 768px) and (max-width: 991.98px) {
+        @media (min-width: 768px) and (max-width: 991px) {
             margin-bottom: 30px;
             @include font-style($raleway-bo, 30px, $w);
         };
@@ -61,11 +58,12 @@
             display: flex;
             cursor: pointer;
             align-items: center;
+            text-decoration: none;
             flex-direction: column;
-            @media (max-width: 575.98px) {
+            @media (max-width: 575px) {
                margin-bottom: 20px;
             };
-            @media (min-width: 576px) and (max-width: 767.98px)  {
+            @media (min-width: 576px) and (max-width: 767px)  {
                 margin-bottom: 30px;
             };
             
@@ -95,7 +93,7 @@
                     transform: translate(-50%, -50%);
                 }
             };
-            @media (max-width: 575.98px) {
+            @media (max-width: 575px) {
                 @include hexagon(45px,45px,transparent, 0px);
                 .hexagon {
                     text-align: center;
@@ -119,7 +117,7 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                    }
+                    };
                 };
             };
 
@@ -129,33 +127,32 @@
                 };
                 .simbol {
                     color: $w;
-                }
+                };
             };
 
             .info {
                 margin-top: 40px;
                 @include font-style ($lato-r,16px,$w);
-                @media (max-width: 575.98px) {
+                @media (max-width: 575px) {
                     margin-top: 10px;
                     @include font-style ($lato-r,15px,$w);
                 };
-                @media (min-width: 576px) and (max-width: 767.98px) {
+                @media (min-width: 576px) and (max-width: 767px) {
                     margin-top: 10px;
                     @include font-style ($lato-r,15px,$w);
                 };
-                @media (min-width: 768px) and (max-width: 991.98px) {
+                @media (min-width: 768px) and (max-width: 991px) {
                     margin-top: 25px;
                     @include font-style ($lato-r,16px,$w);
                 };
-            }
-            
+            };
         };
     };
     @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px);
-    @media (max-width: 575.98px) { 
+    @media (max-width: 575px) { 
         @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px,50%);
     };
-    @media (min-width: 576px) and (max-width: 767.98px) {
+    @media (min-width: 576px) and (max-width: 767px) {
         @include scroll-bar (20px, 20px, $hover-red, absolute, 0,-11px,30%);
     };
 };
