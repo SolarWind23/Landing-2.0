@@ -1,89 +1,97 @@
 .produckt-features {
-   
     padding: 100px 0px 100px 0px;
     @include introduce (175px, 50px, $b, $bl-light);
-    @media (max-width: 767.98px) {
+    @media (max-width: 767px) {
         padding: 50px 0px 50px 0px;
         @include introduce (50px, 30px, $b, $bl-light);
     };
-    @media (min-width: 768px) and (max-width: 991.98px) { 
+    @media (min-width: 768px) and (max-width: 991px) { 
         padding: 50px 0px 50px 0px;
         @include introduce (80px, 50px, $b, $bl-light);
     };
-    @media (min-width: 992px) and (max-width: 1199.98px) { 
+    @media (min-width: 992px) and (max-width: 1199px) { 
         padding: 80px 0px 80px 0px;
         @include introduce (100px, 50px, $b, $bl-light);
     }; 
     
     .options {
-        margin: auto;
         display: flex;
-        width: 87.02%;
-
-        @media  (max-width: 767.98px) { 
+        @include content-wrapper();
+        @media (max-width: 767px) { 
+            align-items: center;
             flex-direction: column;
         };
+
         .list-left {
             margin: 0px;
             padding: 0px;
+            width: 33.3%;
             list-style: none;
             @include font-style($raleway-m, 20px, $b, uppercase);
-
-            @media (max-width: 767.98px) {
+            @media (max-width: 767px) {
                 order: 1;
+                width: 90%;
             };
-            @media (min-width: 768px) and (max-width: 991.98px) { 
+            @media (min-width: 768px) and (max-width: 991px) { 
                 @include font-style($raleway-m, 16px, $b, uppercase);
             };
             .text {
                 flex-grow: 1;
             };
             &-item {
-                display: flex;
-                text-align: right;
-                padding: 10px 20px;
-                align-items: center;
-                margin-bottom: 23px;
-                justify-content: flex-end;
-                border: 1px solid $super-gray-light;
-                &:hover {
-                    transition: all .8s;
-                    background: $hover-red;
-                    color: $w;
-                    .icon {
-                        @include hexagon(32px,32px,$w,relative);
+                .item-inner {
+                    display: flex;
+                    cursor: pointer;
+                    color:$bl-darck;
+                    text-align: right;
+                    padding: 10px 20px;
+                    align-items: center;
+                    margin-bottom: 23px;
+                    text-decoration: none;
+                    justify-content: flex-end;
+                    border: 1px solid $super-gray-light;
+                    &:hover {
+                        color: $w;
+                        transition: all .8s;
+                        background: $hover-red;
+                        .icon {
+                            @include hexagon(32px,32px,$w,relative);
+                        };
+                        .symbol {
+                            color: $hover-red;
+                        };
                     };
-                    .symbol {
-                     color: $hover-red;
+                    @media (max-width: 1199px) { 
+                        text-align: center;
                     };
-                };
-                @media (max-width: 1199.98px) { 
-                    text-align: center;
-                };
-                .icon {
-                    margin: 0px 0px 0px 10px;
-                    @include hexagon(32px,32px,$super-gray-light,relative);
 
-                    .symbol {
-                        top: 50%;
-                        left: 50%;
-                        z-index: 1;
-                        font-size: 13px;
-                        position: absolute;
-                        transform: translate(-50%, -50%);
+                    .icon {
+                        margin: 0px 0px 0px 10px;
+                        @include hexagon(32px,32px,$super-gray-light,relative);
+
+                        .symbol {
+                            top: 50%;
+                            left: 50%;
+                            z-index: 1;
+                            font-size: 13px;
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                        };
                     };
                 };
             };
         };
 
         .wrapper {
+            width: 33.3%;
             display: flex;
             position: relative;
             align-items: center;
             flex-direction: column;
             justify-content: center;
-            @media (max-width: 767.98px) { 
+            @media (max-width: 767px) { 
                 order: 2;
+                width: 90%;
             };
             .pickture {
                 top: -15%;
@@ -91,12 +99,12 @@
                 height: 100%;
                 padding: 0px 15px;
                 position: relative; 
-                @media (max-width: 575.98px) { 
+                @media (max-width: 575px) { 
                     width: 100%;
                     margin:30px 0px;
                 };
                
-                @media (min-width: 576px) and (max-width: 767.98px) {
+                @media (min-width: 576px) and (max-width: 767px) {
                     width: 70%;
                     margin:30px 0px;
                 };
@@ -104,29 +112,31 @@
             .by-theme {
                 bottom: 25%;
                 border: none;
+                cursor: pointer;
                 position: absolute;
                 padding: 18px 40px;
-                background: #393939;
+                text-decoration: none;
+                background: $btn-light;
                 @include font-style($raleway-m, 20px, $w, uppercase);
                 &:focus {
                     border: none;
                     outline: none;
                 };
 
-                @media (max-width: 575.98px) { 
+                @media (max-width: 575px) { 
                     bottom: 15%;
                     padding: 10px 25px;
                 };
-                 @media (min-width: 576px) and (max-width: 767.98px) {
+                 @media (min-width: 576px) and (max-width: 767px) {
                     bottom: 15%;
                     padding: 15px 40px;
                 }; 
-                @media (min-width: 768px) and (max-width: 991.98px) { 
+                @media (min-width: 768px) and (max-width: 991px) { 
                     bottom: 25%;
                     font-size: 15px;
                     padding: 5px 20px;
                 };
-                 @media (min-width: 992px) and (max-width: 1199.98px) { 
+                 @media (min-width: 992px) and (max-width: 1199px) { 
                     bottom: 25%;
                     font-size: 20px;
                     padding: 10px 30px;
@@ -137,50 +147,57 @@
         .list-right {
             margin: 0px;
             padding: 0px;
+            width: 33.3%;
             list-style: none;
             @include font-style($raleway-m, 20px, $b, uppercase);
-            @media (max-width: 767.98px) {
+            @media (max-width: 767px) {
                 order: 3;
+                width: 90%;
             };
-            @media (min-width: 768px) and (max-width: 991.98px) { 
+            @media (min-width: 768px) and (max-width: 991px) { 
                 @include font-style($raleway-m, 16px, $b, uppercase);
             };
             &-item {
-                display: flex;
-                text-align: left;
-                padding: 10px 20px;
-                align-items: center;
-                margin-bottom: 23px;
-                justify-content: flex-start;
-                border: 1px solid $super-gray-light;
-                &:hover {
-                    transition: all .8s;
-                    background: $hover-red;
-                    color: $w;
+                .item-inner {
+                    display: flex;
+                    cursor: pointer;
+                    color:$bl-darck;
+                    text-align: left;
+                    padding: 10px 20px;
+                    align-items: center;
+                    margin-bottom: 23px;
+                    text-decoration: none;
+                    justify-content: flex-start;
+                    border: 1px solid $super-gray-light;
+                    &:hover {
+                        color: $w;
+                        transition: all .8s;
+                        background: $hover-red;
+                        .icon {
+                            @include hexagon(32px,32px,$w,relative);
+                        };
+                        .symbol {
+                            color: $hover-red;
+                        };
+                    };
+                    @media (max-width: 1199px) { 
+                        text-align: center;
+                    };
+                    .text {
+                        flex-grow: 1;
+                    };
                     .icon {
-                        @include hexagon(32px,32px,$w,relative);
-                    };
-                    .symbol {
-                     color: $hover-red;
-                    };
-                };
-                @media (max-width: 1199.98px) { 
-                    text-align: center;
-                };
-                .text {
-                    flex-grow: 1;
-                };
-                .icon {
-                    margin: 0px 10px 0px 0px;
-                    @include hexagon(32px,32px,$super-gray-light,relative);
+                        margin: 0px 10px 0px 0px;
+                        @include hexagon(32px,32px,$super-gray-light,relative);
 
-                    .symbol {
-                        top: 50%;
-                        left: 50%;
-                        z-index: 1;
-                        font-size: 13px;
-                        position: absolute;
-                        transform: translate(-50%, -50%);
+                        .symbol {
+                            top: 50%;
+                            left: 50%;
+                            z-index: 1;
+                            font-size: 13px;
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                        };
                     };
                 };
             };

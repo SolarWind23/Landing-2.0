@@ -4,6 +4,7 @@
 //= './components/accordion.js'
 //= './components/portfolio.js'
 //= './components/clients.js'
+//= './components/skills.js'
 //= './components/blog.js'
 
 

@@ -3,16 +3,15 @@
     @include introduce (102px, 50px, $b, $b);
 
     .content-wrapper {
-        margin: auto;
-        width: 81.42%;
         display: flex;
         flex-wrap: wrap;
-        padding: 0px 15px;
+        @include content-wrapper();        
         justify-content: space-between;
-        @media (min-width: 768px) and (max-width: 991.98px) {
+
+        @media (min-width: 768px) and (max-width: 991px) {
             justify-content: space-around;
         };
-        @media (max-width: 575.98px) {
+        @media (max-width: 575px) {
             justify-content: center;
         }; 
         .member {
@@ -21,47 +20,49 @@
             display: flex;
             padding: 0px 15px;
             flex-direction: column;
-            @media (min-width: 992px) and (max-width: 1199.98px) {
+            @media (min-width: 992px) and (max-width: 1199px) {
                 width: 20%;
             };
-            @media (min-width: 768px) and (max-width: 991.98px) {
+            @media (min-width: 768px) and (max-width: 991px) {
                 flex-grow: unset;
                 width: 33%;
                 margin-bottom: 30px;
             }
-            @media (min-width: 576px) and (max-width: 767.98px) {
+            @media (min-width: 576px) and (max-width: 767px) {
                 flex-grow: unset;
                 width: 43%;
                 margin-bottom: 30px;
             }; 
             @media (min-width:491px) and (max-width: 575px) {
                 flex-grow: unset;
-                width: 55%;
+                width: 75%;
                 margin-bottom: 30px;
             };
             @media (min-width:425px) and (max-width: 490px) {
                 flex-grow: unset;
-                width: 65%;
+                width: 75%;
                 margin-bottom: 30px;
             }; 
             @media (min-width:391px) and (max-width: 424px) {
                 flex-grow: unset;
-                width: 75%;
+                width: 85%;
                 margin-bottom: 30px;
             }; 
             @media (max-width: 390px) {
                 flex-grow: unset;
-                width: 85%;
+                width: 90%;
                 margin-bottom: 30px;
             };
             &:hover {
                 .overlay {
                     top:0px;
+                    height: 101%;
                 };
 
                 
-                .member--info {
+                .member-info {
                     border:1px solid, $b;
+                    
                     .name {
                         @include font-style($raleway-m,20px,$hover-red,uppercase);
                     };
@@ -69,13 +70,13 @@
                
             
             };
-            &--picture {
+            &-picture {
                 position: relative;
                 overflow: hidden;
                 transition: all .8s;
 
                 .overlay {
-                    top: -250px;
+                    top: -450px;
                     position: absolute;
                     width: 100%;
                     height: 100%;
@@ -98,7 +99,7 @@
                             outline: none;
                         };
                         @include hexagon (46px, 46px, $w, 0px);
-                        @media  (min-width: 992px) and (max-width: 1130.98px){
+                        @media  (min-width: 992px) and (max-width: 1130px){
                             @include hexagon (36px, 36px, $w, 0px);
                         };
                         .logo {
@@ -115,74 +116,12 @@
 
                 .picture {
                     width: 100%;
-                    height: 240px;
-                    background-size: cover;
-                    &.wayne {
-                        background: url('../../img/spite-img.png'), no-repeat;
-                        background-position-x: 90%;
-                        width:100%;
-                      
-                        @media (min-width: 1120px) and (max-width: 1300px) {
-                            background-position-x: 87%;
-                        };
-                        @media (min-width: 992px) and (max-width: 1119px) {
-                            background-position-x: 85%;
-                        };
-                        @media (min-width: 768px) and (max-width: 900px) {
-                            background-position-x: 87%;
-                        };
-                    };
-                    &.srour {
-                        background: url('../../img/spite-img.png'), no-repeat;
-                        background-position-x: 5%;
-                        @media (min-width: 1120px) and (max-width: 1300px) {
-                            background-position-x: 13%;
-                        };
-                        @media (min-width: 992px) and (max-width: 1119px) {
-                            background-position-x: 15%;
-                        };
-                        @media (min-width: 768px) and (max-width: 900px) {
-                            background-position-x: 12%;
-                        };
-                    };
-                    &.doe {
-                        background: url('../../img/spite-img.png'), no-repeat;
-                        background-position-y: 95%;
-                        background-position-x: 94%;
-
-                        @media (min-width: 1120px) and (max-width: 1300px) {
-                            
-                            background-position-x: 90%;
-                        };
-                        @media (min-width: 992px) and (max-width: 1119px) {
-                            
-                            background-position-x: 87%;
-                        };
-                        @media (min-width: 768px) and (max-width: 900.98px) {
-                            background-position-x: 90%;
-                        };
-                    };
-                    &.de {
-                        background: url('../../img/spite-img.png'), no-repeat;
-                        background-position-y: 95%;
-                        background-position-x: 5%;
-                        
-                        @media (min-width: 1120px) and (max-width: 1300px) {
-                            background-position-y: 95%;
-                            background-position-x: 10%;
-                        };
-                        @media (min-width: 992px) and (max-width: 1119px) {
-                            background-position-x: 15%;
-                        };
-
-                        @media (min-width: 768px) and (max-width: 900.98px) {
-                            background-position-x: 12%;
-                        };
-                    };
+                    height: 100%;
+                    object-fit: cover;
                 };
             };
            
-            &--info {
+            &-info {
                 border:1px solid, $gray-light;
                 text-align: center;
                 transition: all .8s;
@@ -209,10 +148,10 @@
         position: relative;
         @include scroll-bar (20px, 20px, $b, absolute, 0,0px);
 
-        @media (max-width: 575.98px) { 
+        @media (max-width: 575px) { 
             @include scroll-bar (20px, 20px, $b, absolute, 0,0px,50%);
         };
-        @media (min-width: 576px) and (max-width: 767.98px) {
+        @media (min-width: 576px) and (max-width: 767px) {
             @include scroll-bar (20px, 20px, $b, absolute, 0,0px,30%);
         };
     };
