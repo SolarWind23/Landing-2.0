@@ -145,6 +145,7 @@
                     outline: none;
                     border: 1px solid $gray-light;
                     padding: 11px;
+                    resize: none;
                     @include font-style($lato-r, 16px, $bl-light, capitalize);
                     &:focus {
                         box-shadow: 0 0 0 0.1rem $gray-light;
